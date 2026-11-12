@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Єдиний державний реєстр нормативно-правових актів України</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <div class="emblem-box" aria-hidden="true">УА</div>
+                <div class="brand-text">
+                    <span class="brand-subtitle">ОФІЦІЙНИЙ ДОВІДКОВИЙ ПОРТАЛ</span>
+                    <h1 class="brand-title">ЗАКОНОДАВСТВО УКРАЇНИ</h1>
+                </div>
+            </div>
+            <div class="header-meta">
+                <span class="meta-badge">ПРЯМА ІНТЕГРАЦІЯ З БАЗОЮ ВРУ</span>
+                <span class="meta-status" id="apiStatusIndicator">ГОТОВО ДО РОБОТИ</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <div class="toolbar-container">
+            <div class="search-group">
+                <label for="searchInput" class="sr-only">Пошук за номером статті або ключовим словом</label>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Пошук у завантаженому кодексі/законі (номер статті або ключове слово)..."
+                    autocomplete="off"
+                >
+                <button type="button" id="clearSearchBtn" class="btn btn-secondary" hidden>Очистити</button>
+            </div>
+            <div class="filter-group">
+                <span class="stats-counter" id="statsCounter">Оберіть кодекс або закон ліворуч</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-layout">
+        <aside class="sidebar" aria-label="Класифікатор нормативно-правових актів">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">НОРМАТИВНО-ПРАВОВА БАЗА УКРАЇНИ</h2>
+            </div>
+            <nav id="treeNav" class="tree-nav"></nav>
+        </aside>
+
+        <section class="content-area" aria-live="polite">
+            <nav id="breadcrumbs" class="breadcrumbs" aria-label="Навігаційний шлях">
+                <span class="crumb-item">Головна</span>
+            </nav>
+
+            <div id="documentHeader" class="document-header">
+                <div class="doc-category-tag" id="currentActCategory">КАТЕГОРІЯ АКТА</div>
+                <h2 id="currentActTitle" class="act-title">Завантаження нормативно-правового акта...</h2>
+                <p id="currentActMeta" class="act-meta">Отримання повного тексту з офіційного сервера Верховної Ради України та автоматична нарізка на розділи й статті.</p>
+            </div>
+
+            <div id="articlesContainer" class="articles-container"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-text">Єдина інформаційно-довідкова система законодавства України. Усі права захищено.</p>
+            <p class="footer-subtext">Пряма клієнтська синхронізація з офіційним реєстром Верховної Ради України (data.rada.gov.ua).</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
